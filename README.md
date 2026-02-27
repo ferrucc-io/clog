@@ -62,7 +62,7 @@ The agent proposes a fix targeting the root cause, removes all `_clog()` instrum
 ### Install
 
 ```bash
-cargo install --git https://github.com/ferruccio/clog
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/ferrucc-io/clog/releases/latest/download/clog-installer.sh | sh
 ```
 
 ### Setup (once per project)
@@ -221,7 +221,7 @@ clog is deliberately simple:
 <p align="center">
 
 ```bash
-cargo install --git https://github.com/ferruccio/clog && clog init && clog start
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/ferrucc-io/clog/releases/latest/download/clog-installer.sh | sh && clog init && clog start
 ```
 
 Then just `/reproduce`.
