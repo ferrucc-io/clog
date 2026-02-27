@@ -2,17 +2,18 @@
 
 **Runtime-driven debugging for AI coding agents.**
 
-Many bugs can't be found by reading code. Race conditions, stale state, wrong execution order, unexpected input shapes — these only reveal themselves when the code actually runs. clog gives your AI agent eyes into what's happening at runtime, so it can debug from real execution data instead of guessing from static code.
+Many bugs can't be found by reading code. Race conditions, stale state, wrong execution order, unexpected input shapes you can debug these only when your code runs.
 
----
+clog gives your AI agent its own way to collect logs so it can debug from real execution data instead of guessing from static code, or have you copy paste things manually.
 
 ## Why runtime data matters
 
-When you describe a bug to an AI coding agent, it reads your source code, forms a hypothesis, and proposes a fix. Sometimes that works. But for a whole class of bugs — the ones that depend on timing, state, or data flow — reading code isn't enough. The agent needs to see what actually happened.
+When you describe a bug to an AI coding agent, it reads your source code, forms a hypothesis, and proposes a fix. Sometimes that works. But for bugs that depend on timing, state, or data flow reading code isn't enough. The agent needs to see what happened.
 
-clog bridges that gap. It's a lightweight local server that collects structured logs from your running application and makes them available to the agent. Instead of you manually adding print statements, copying output, and pasting it into chat, the agent handles the entire loop: instrument, reproduce, observe, diagnose.
+clog bridges that gap. It's a lightweight local server that collects logs from your running application and makes them available to the agent.
 
----
+The agent handles the entire loop: instrument, reproduce, observe, diagnose. So you're not manually adding print statements, copying output, and pasting it into chat.
+
 
 ## How it works
 
