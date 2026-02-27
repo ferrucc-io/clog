@@ -56,10 +56,8 @@ pub fn stop() {
     };
 
     if process_alive(info.pid) {
-        unsafe {
-            libc::kill(info.pid as i32, libc::SIGTERM);
-        }
-        eprintln!("sent SIGTERM to pid {}", info.pid);
+        kill_process(info.pid);
+        eprintln!("terminated pid {}", info.pid);
     } else {
         eprintln!("process {} not alive (stale server.json)", info.pid);
     }
@@ -148,6 +146,30 @@ pub fn init() {
     eprintln!("installed clog reproduce skill at {}", skill_file.display());
 }
 
+#[cfg(unix)]
+fn kill_process(pid: u32) {
+    unsafe { libc::kill(pid as i32, libc::SIGTERM); }
+}
+
+#[cfg(windows)]
+fn kill_process(pid: u32) {
+    let _ = Command::new("taskkill")
+        .args(["/PID", &pid.to_string(), "/F"])
+        .stdout(std::process::Stdio::null())
+        .stderr(std::process::Stdio::null())
+        .status();
+}
+
+#[cfg(unix)]
 fn process_alive(pid: u32) -> bool {
     unsafe { libc::kill(pid as i32, 0) == 0 }
+}
+
+#[cfg(windows)]
+fn process_alive(pid: u32) -> bool {
+    Command::new("tasklist")
+        .args(["/FI", &format!("PID eq {pid}"), "/NH"])
+        .output()
+        .map(|o| String::from_utf8_lossy(&o.stdout).contains(&pid.to_string()))
+        .unwrap_or(false)
 }
