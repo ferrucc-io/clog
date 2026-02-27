@@ -227,3 +227,9 @@ curl --proto '=https' --tlsv1.2 -LsSf https://github.com/ferrucc-io/clog/release
 Then just `/reproduce`.
 
 </p>
+
+---
+
+## Acknowledgments
+
+Inspired by [Cursor's debug mode](https://docs.cursor.com/agent/debug), which demonstrated the value of letting AI agents observe runtime behavior to diagnose bugs.
