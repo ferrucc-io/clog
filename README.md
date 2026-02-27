@@ -19,7 +19,7 @@ clog bridges that gap. It's a lightweight local server that collects structured 
 clog has two parts: a **CLI** that runs a local log server, and a **skill** that teaches your agent the debugging workflow.
 
 ```
-┌──────────────┐     POST /log      ┌──────────────┐
+┌──────────────┐     POST /log       ┌──────────────┐
 │   Your App   │ ──────────────────► │ clog server  │
 │ (_clog calls)│   localhost:2999    │  (~/.clog/)  │
 └──────────────┘                     └──────┬───────┘
@@ -27,8 +27,8 @@ clog has two parts: a **CLI** that runs a local log server, and a **skill** that
                                      ndjson log file
                                             │
                                      ┌──────▼───────┐
-                                     │   AI Agent    │
-                                     │  /reproduce   │
+                                     │   AI Agent   │
+                                     │  /reproduce  │
                                      └──────────────┘
 ```
 
