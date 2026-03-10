@@ -116,7 +116,7 @@ Wait for the user to confirm they've reproduced the bug before proceeding.
 Clear any old logs first if you started fresh, otherwise look at recent entries:
 
 ```bash
-clog latest -n 50
+clog -n 50
 ```
 
 For targeted searches, use grep on the log file directly:
@@ -125,11 +125,11 @@ For targeted searches, use grep on the log file directly:
 grep "step" ~/.clog/logs/clog.ndjson
 ```
 
-Or use `clog latest` with a filter:
+Or use `clog` with a filter:
 
 ```bash
-clog latest -n 100 -q "error"
-clog latest -n 100 -q "step_name"
+clog -n 100 -q "error"
+clog -n 100 -q "step_name"
 ```
 
 For more powerful searches, use ripgrep:
