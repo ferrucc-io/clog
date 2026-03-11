@@ -1,0 +1,12 @@
+{
+  "name": "zod-telemetry",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Collect Zod validation failures silently and explore them to fill in your types",
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm --filter @zod-telemetry/server dev",
+    "typecheck": "pnpm -r typecheck"
+  }
+}

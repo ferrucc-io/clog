@@ -1,0 +1,25 @@
+{
+  "name": "@zod-telemetry/server",
+  "version": "0.1.0",
+  "description": "Telemetry server for zod-telemetry - collects validation failures and helps you build better types",
+  "main": "./dist/index.js",
+  "bin": {
+    "zod-telemetry": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs --dts --banner.js '#!/usr/bin/env node'",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.0.0",
+    "@hono/node-server": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
