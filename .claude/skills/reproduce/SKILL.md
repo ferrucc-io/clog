@@ -22,10 +22,7 @@ If it's not running, start it:
 clog start
 ```
 
-If `clog` is not installed, tell the user to install it:
-```
-cargo install --path <path-to-clog-repo>
-```
+If `clog` is not installed, tell the user to install it first using the project's README instructions.
 
 The clog server always runs on port **2999**.
 
@@ -36,7 +33,7 @@ Ask the user:
 - Where in the codebase do they think the problem is? (file, function, flow)
 - How do they reproduce it?
 
-If the user already described the bug (e.g. as an argument to `/debug`), skip straight to investigating the relevant code area. Use `$ARGUMENTS` as the bug description if provided.
+If the user already described the bug (e.g. as an argument to `/reproduce`), skip straight to investigating the relevant code area. Use `$ARGUMENTS` as the bug description if provided.
 
 ## Step 2: Instrument the code
 
